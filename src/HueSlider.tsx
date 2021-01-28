@@ -19,7 +19,9 @@ function HueSlider(props: HueSliderProps): ReactElement {
   }
 
   return( 
-    <input type="range" min="0" max="360" value={props.hsvValues.h} onChange={handleChange}></input>
+    <div className="sliderContainer">
+        <input className="slider" type="range" min="0" max="360" value={props.hsvValues.h} onChange={handleChange}></input>
+    </div>
   );
 }
 

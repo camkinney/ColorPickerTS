@@ -28,7 +28,6 @@ function ColorInput(props: ColorInputProps): ReactElement {
       <HexInput hsvValues={props.hsvValues} handleColorChange={props.handleColorChange}/>
       <RGBInput rgbValues={rgbValues} handleColorChange={rgbCallback}/>
       <HSVInput hsvValues={props.hsvValues} handleColorChange={props.handleColorChange}/>
-      <HueSlider hsvValues={props.hsvValues} handleColorChange={props.handleColorChange}/>
     </div>
   );
 }
