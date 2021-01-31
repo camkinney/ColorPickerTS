@@ -1,5 +1,6 @@
 import React from "react";
 import * as Color from "./ColorModule";
+import InputLabelPair from "./InputLabelPair";
 
 type HSVProps = {
     handleColorChange: (hsvValues: Color.HSVValues) => void;
@@ -17,33 +18,22 @@ class HSVInput extends React.Component<HSVProps> {
    * Handler for when field's value is changed
    * @param event Change event
    */
-  private handleChange(event: React.ChangeEvent<HTMLInputElement>): void {
-    let changedVal = event.target.value;
-    let changedId = event.target.id as Color.HSV;
-    
-    let newHSVValues = Color.getNewHSVValues(this.props.hsvValues, changedVal, changedId);
+  private handleChange(changedValue: string, id: string): void {
+   
+    let newHSVValues = Color.getNewHSVValues(this.props.hsvValues, changedValue, id as Color.HSV);
     this.props.handleColorChange(newHSVValues);
   }
 
   
   render() {
     return(
-      <form className="RGBInput">
-        <label>
-          { Color.HSV.h.toUpperCase() }:
-          <input className="inputField" type="text" id={Color.HSV.h} value={this.props.hsvValues.h} onChange={this.handleChange}></input>
-        </label>
-        <label>
-          { Color.HSV.s.toUpperCase() }:
-          <input className="inputField" type="text" id={Color.HSV.s} value={this.props.hsvValues.s} onChange={this.handleChange}></input>
-        </label>
-        <label>
-          { Color.HSV.v.toUpperCase() }:
-          <input className="inputField" type="text" id={Color.HSV.v} value={this.props.hsvValues.v} onChange={this.handleChange}></input>
-        </label>
-      </form>
+      <div className="RGBInput">
+        <InputLabelPair value={this.props.hsvValues.h} id={Color.HSV.h} handleChange={this.handleChange}/>
+        <InputLabelPair value={this.props.hsvValues.s} id={Color.HSV.s} handleChange={this.handleChange}/>
+        <InputLabelPair value={this.props.hsvValues.v} id={Color.HSV.v} handleChange={this.handleChange}/>
+      </div>
     );
-  }
+  } 
 
 }
 

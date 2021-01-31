@@ -18,13 +18,11 @@ class RGBInput extends React.Component<RGBProps> {
    * Handler for when R, G, or B value is changed
    * @param event Change event
    */
-  handleChange(event: React.ChangeEvent<HTMLInputElement>): void {
-    let value = event.target.value;
-    let formattedValue = Color.formatNumString(value, 255);
-    let id: Color.RGB = event.target.id as Color.RGB;
+  handleChange(changedValue: string, id: string): void {
+    let formattedValue = Color.formatNumString(changedValue, 255);
     if (id === null) return;
 
-    let newRGBValues = Color.getNewRGBValues(this.props.rgbValues, formattedValue, id);
+    let newRGBValues = Color.getNewRGBValues(this.props.rgbValues, formattedValue, id as Color.RGB);
   
     this.props.handleColorChange(newRGBValues);
   }

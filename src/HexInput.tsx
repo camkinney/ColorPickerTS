@@ -1,9 +1,10 @@
 import React from "react";
 import * as Color from "./ColorModule";
+import "./styles/HexInput.css";
 
 type HexInputProps = {
-    hsvValues: Color.HSVValues,
-    handleColorChange: (hsvValues: Color.HSVValues) => void;
+    rgbValues: Color.RGBValues,
+    handleColorChange: (hsvValues: Color.RGBValues) => void;
 }
 
 class HexInput extends React.Component<HexInputProps> {
@@ -20,17 +21,15 @@ class HexInput extends React.Component<HexInputProps> {
    */
   private handleChange(event: React.ChangeEvent<HTMLInputElement>): void {
     let newHexValue = event.target.value;
-    let newHSVValues: Color.HSVValues = Color.HexToHSV(newHexValue);
-    this.props.handleColorChange(newHSVValues);
+    let newRGBValues: Color.RGBValues = Color.HexToRGB(newHexValue);
+    this.props.handleColorChange(newRGBValues);
   }
      
   render() {
-    let hexValue = Color.HSVToHex(this.props.hsvValues);
+    let hexValue = Color.RGBToHex(this.props.rgbValues);
     return(
       <div className="hexInput">
-        <label htmlFor="hexField" className="hexLabel">
-          Hex (#): 
-        </label>
+        <div className="hexFieldPrefix">0x</div>
         <input id="hexField" className="hexField" type="text" value={hexValue} onChange={this.handleChange}></input>      
       </div>
     );

@@ -5,7 +5,7 @@ import * as Color from './ColorModule';
 function App() {
   return (
     <div className="appContainer">
-      <ColorPicker hsvValues={new Color.HSVValues(195, 76, 83)}/>
+      <ColorPicker rgbValues={new Color.RGBValues(232,101,115)}/>
     </div>
     
   );

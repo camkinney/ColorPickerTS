@@ -1,0 +1,31 @@
+.hexField{
+    display: inline-block;
+    width: 96px;
+    font-size: 26px;
+    border-color: #989898;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: none;
+    background-color: white;
+    border-width: 1px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.hexFieldPrefix {
+    display: inline-block;
+    width: 28px;
+    height: 33px;
+    font-size: 26px;
+    color: #989898;
+    border-color: #989898;
+    border-left-style: solid;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-right-style: none;
+    background-color: white;
+    border-width: 1px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
