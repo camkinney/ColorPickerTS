@@ -9,11 +9,10 @@ type ColorDislayProps = {
 function ColorDisplay(props: ColorDislayProps): ReactElement {
 
   let rgbValues = Color.HSVToRGB(props.hsvValues);
-  const sideLength = "200px";
   const style = {
     backgroundColor: "rgb("+rgbValues.r+", "+rgbValues.g+", "+rgbValues.b+")",
-    width: sideLength,
-    height: sideLength,
+    width: "50px",
+    height: "50px",
   }; 
 
   return(

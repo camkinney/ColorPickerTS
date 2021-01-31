@@ -3,6 +3,7 @@ import ColorDisplay from "./ColorDisplay";
 import ColorInput from "./ColorInput";
 import HueSlider from "./HueSlider";
 import * as Color from "./ColorModule";
+import ColorMatrix from "./ColorMatrix";
 
   
 type ColorPickerProps = {
@@ -34,12 +35,15 @@ class ColorPicker extends React.Component<ColorPickerProps, ColorPickerState> {
   render() {
     return (
       <div className="colorPicker">
-        <ColorInput hsvValues={this.state.hsvValues} handleColorChange={this.handleColorChange}/>
-        <div>
-          <ColorDisplay hsvValues={this.state.hsvValues} />
-          <HueSlider hsvValues={this.state.hsvValues} handleColorChange={this.handleColorChange}/>
+        <div className="colorInput">
+        {<ColorInput hsvValues={this.state.hsvValues} handleColorChange={this.handleColorChange}/> }
+         { /* <ColorDisplay hsvValues={this.state.hsvValues} /> */}
         </div>
-      </div>
+       { /*<div>
+          <ColorMatrix hsvValues={this.state.hsvValues}/>
+          <HueSlider hsvValues={this.state.hsvValues} handleColorChange={this.handleColorChange}/>
+        </div>*/}
+       </div> 
     );
   }
 

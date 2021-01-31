@@ -24,11 +24,11 @@ function ColorInput(props: ColorInputProps): ReactElement {
   let rgbValues = Color.HSVToRGB(props.hsvValues);
 
   return( 
-    <div className="colorInput"> 
-      <HexInput hsvValues={props.hsvValues} handleColorChange={props.handleColorChange}/>
+    <> 
+      {/* <HexInput hsvValues={props.hsvValues} handleColorChange={props.handleColorChange}/> */}
       <RGBInput rgbValues={rgbValues} handleColorChange={rgbCallback}/>
-      <HSVInput hsvValues={props.hsvValues} handleColorChange={props.handleColorChange}/>
-    </div>
+     {/* <HSVInput hsvValues={props.hsvValues} handleColorChange={props.handleColorChange}/> */}
+    </>
   );
 }
 

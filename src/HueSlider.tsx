@@ -14,7 +14,7 @@ function HueSlider(props: HueSliderProps): ReactElement {
    */
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     let newHue = event.target.value;
-    let newHSVValues = new Color.HSVValues(parseInt(newHue), props.hsvValues.h, props.hsvValues.v);
+    let newHSVValues = new Color.HSVValues(parseInt(newHue), props.hsvValues.s, props.hsvValues.v);
     props.handleColorChange(newHSVValues);
   }
 

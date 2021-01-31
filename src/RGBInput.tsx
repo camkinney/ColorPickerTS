@@ -32,20 +32,11 @@ class RGBInput extends React.Component<RGBProps> {
    
   render() {
     return(
-      <form className="RGBInput">
-        <label>
-          { Color.HSV.h.toUpperCase() }:
-          <input className="inputField" type="text" id={Color.RGB.r} value={this.props.rgbValues.r} onChange={this.handleChange}></input>
-        </label>
-        <label>
-          { Color.HSV.s.toUpperCase() }:
-          <input className="inputField" type="text" id={Color.RGB.g} value={this.props.rgbValues.g} onChange={this.handleChange}></input>
-        </label>
-        <label>
-          { Color.HSV.v.toUpperCase() }:
-          <input className="inputField" type="text" id={Color.RGB.b} value={this.props.rgbValues.b} onChange={this.handleChange}></input>
-        </label>
-      </form>
+      <div className="rgbInput">
+        <InputLabelPair value={this.props.rgbValues.r} id={Color.RGB.r} handleChange={this.handleChange}/>
+        <InputLabelPair value={this.props.rgbValues.g} id={Color.RGB.g} handleChange={this.handleChange}/>
+        <InputLabelPair value={this.props.rgbValues.b} id={Color.RGB.b} handleChange={this.handleChange}/>
+      </div>
     );
   }
 
