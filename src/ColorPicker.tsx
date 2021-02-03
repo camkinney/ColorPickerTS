@@ -4,6 +4,10 @@ import ColorInput from "./ColorInput";
 import HueSlider from "./HueSlider";
 import * as Color from "./ColorModule";
 import ColorMatrix from "./ColorMatrix";
+import RGBInput from "./RGBInput";
+import HSVInput from "./HSVInput";
+import HexInput from "./HexInput";
+import "./styles/ColorPicker.css"
 
   
 type ColorPickerProps = {
@@ -44,15 +48,21 @@ class ColorPicker extends React.Component<ColorPickerProps, ColorPickerState> {
   render() {
     return (
       <div className="colorPicker">
-        <div className="colorInput">
-        {<ColorInput hsvValues={this.state.hsvValues} rgbValues={this.state.rgbValues} handleColorChange={this.handleColorChange}/> }
-         { /* <ColorDisplay hsvValues={this.state.hsvValues} /> */}
+        <div className="leftPaneControls" >
+          <div className="colorInput">
+            <RGBInput rgbValues={this.state.rgbValues} handleColorChange={this.handleColorChange}/>
+            <HSVInput hsvValues={this.state.hsvValues} handleColorChange={this.handleColorChange}/>
+          </div>
+          <div className="colPickHexDispContainer">
+            <div className="colorDispContainer">
+              <ColorDisplay rgbValues={this.state.rgbValues}/>
+            </div>
+            <div className="hexInputContainer">
+              <HexInput rgbValues={this.state.rgbValues} handleColorChange={this.handleColorChange}/>
+            </div>
         </div>
-       { /*<div>
-          <ColorMatrix hsvValues={this.state.hsvValues}/>
-          <HueSlider hsvValues={this.state.hsvValues} handleColorChange={this.handleColorChange}/>
-        </div>*/}
-       </div> 
+        </div>
+      </div> 
     );
   }
 

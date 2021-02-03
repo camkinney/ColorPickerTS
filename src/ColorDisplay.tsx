@@ -1,22 +1,19 @@
 import { ReactElement } from "react";
-import "./App.css";
+import "./styles/ColorDisplay.css";
 import * as Color from "./ColorModule";
 
 type ColorDislayProps = {
-    hsvValues: Color.HSVValues;
+    rgbValues: Color.RGBValues;
 }
 
 function ColorDisplay(props: ColorDislayProps): ReactElement {
 
-  let rgbValues = Color.HSVToRGB(props.hsvValues);
   const style = {
-    backgroundColor: "rgb("+rgbValues.r+", "+rgbValues.g+", "+rgbValues.b+")",
-    width: "50px",
-    height: "50px",
+    backgroundColor: "rgb("+props.rgbValues.r+", "+props.rgbValues.g+", "+props.rgbValues.b+")"
   }; 
 
   return(
-    <div style={style}> </div>
+    <div className="colDispDisplayBox" style={style}> </div>
   );
 }
 

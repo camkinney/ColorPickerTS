@@ -15,9 +15,7 @@ function ColorInput(props: ColorInputProps): ReactElement {
 
   return( 
     <> 
-      <RGBInput rgbValues={props.rgbValues} handleColorChange={props.handleColorChange}/>
-      <HSVInput hsvValues={props.hsvValues} handleColorChange={props.handleColorChange}/>
-      <HexInput rgbValues={props.rgbValues} handleColorChange={props.handleColorChange}/>
+      
     </>
   );
 }
