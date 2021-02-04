@@ -8,14 +8,19 @@
 
 .leftPaneControls {
     width: 270px;
+    display: inline-block;
+}
+.rightPaneControls {
+    width: 270px;
+    display: inline-block;
 }
 
 .hexInputContainer {
-    width: 70%;
+    width: 60%;
     display: inline-block;
     height: 100%;
 } 
 .colorDispContainer {
-    width: 30%;
+    width: 40%;
     display: inline-block;
 } 

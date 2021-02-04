@@ -52,6 +52,7 @@ class ColorPicker extends React.Component<ColorPickerProps, ColorPickerState> {
           <div className="colorInput">
             <RGBInput rgbValues={this.state.rgbValues} handleColorChange={this.handleColorChange}/>
             <HSVInput hsvValues={this.state.hsvValues} handleColorChange={this.handleColorChange}/>
+            <HueSlider hsvValues={this.state.hsvValues} handleColorChange={this.handleColorChange} />
           </div>
           <div className="colPickHexDispContainer">
             <div className="colorDispContainer">
@@ -60,8 +61,12 @@ class ColorPicker extends React.Component<ColorPickerProps, ColorPickerState> {
             <div className="hexInputContainer">
               <HexInput rgbValues={this.state.rgbValues} handleColorChange={this.handleColorChange}/>
             </div>
+          </div>
         </div>
+        <div className="rightPaneControls">
+          
         </div>
+        
       </div> 
     );
   }

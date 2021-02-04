@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react";
 import * as Color from "./ColorModule";
+import "./styles/HueSlider.css";
 
 type HueSliderProps = {
     hsvValues: Color.HSVValues; 
