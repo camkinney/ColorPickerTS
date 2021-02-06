@@ -2,6 +2,9 @@ import { ReactElement } from "react";
 import "./App.css";
 import * as Color from "./ColorModule";
 
+//// WIP playing around with approaches to a color matrix with value/saturation axes
+
+
 type ColorDislayProps = {
     hsvValues: Color.HSVValues;
 }

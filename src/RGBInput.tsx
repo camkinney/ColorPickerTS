@@ -1,6 +1,7 @@
 import React from "react";
-import InputLabelPair from "./InputLabelPair";
 import * as Color from "./ColorModule";
+import PlusMinusTextInput from "./PlusMinusTextInput";
+import { InputLabelPair, PlusMinusLabel } from "./styles/SharedCompStyles";
 
 type RGBProps = {
   rgbValues: Color.RGBValues; 
@@ -30,11 +31,20 @@ class RGBInput extends React.Component<RGBProps> {
    
   render() {
     return(
-      <div className="rgbInput">
-        <InputLabelPair value={this.props.rgbValues.r} id={Color.RGB.r} handleChange={this.handleChange}/>
-        <InputLabelPair value={this.props.rgbValues.g} id={Color.RGB.g} handleChange={this.handleChange}/>
-        <InputLabelPair value={this.props.rgbValues.b} id={Color.RGB.b} handleChange={this.handleChange}/>
-      </div>
+      <>
+        <InputLabelPair>
+          <PlusMinusLabel htmlFor={Color.RGB.r}> { Color.RGB.r.toUpperCase() }:</PlusMinusLabel>
+          <PlusMinusTextInput id={Color.RGB.r} value={this.props.rgbValues.r} handleChange={this.handleChange}/>     
+        </InputLabelPair>
+        <InputLabelPair>
+          <PlusMinusLabel htmlFor={Color.RGB.g}> { Color.RGB.g.toUpperCase() }:</PlusMinusLabel>
+          <PlusMinusTextInput id={Color.RGB.g} value={this.props.rgbValues.g} handleChange={this.handleChange}/>     
+        </InputLabelPair>
+        <InputLabelPair>
+          <PlusMinusLabel htmlFor={Color.RGB.b}> { Color.RGB.b.toUpperCase() }:</PlusMinusLabel>
+          <PlusMinusTextInput id={Color.RGB.b} value={this.props.rgbValues.b} handleChange={this.handleChange}/>     
+        </InputLabelPair>
+      </>
     );
   }
 

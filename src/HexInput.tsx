@@ -1,11 +1,42 @@
 import React from "react";
 import * as Color from "./ColorModule";
-import "./styles/HexInput.css";
+import styled from "styled-components";
 
 type HexInputProps = {
     rgbValues: Color.RGBValues,
     handleColorChange: (hsvValues: Color.RGBValues) => void;
 }
+
+const HexContainer = styled.div`
+float: right;
+margin: 20px 14px 20px;
+`;
+
+const HexPrefix = styled.div`
+display: inline-block;
+width: 28px;
+height: 33px;
+font-size: 26px;
+color: #989898;
+border-color: #989898;
+border-style: solid none solid solid;
+background-color: white;
+border-width: 1px;
+border-top-left-radius: 3px;
+border-bottom-left-radius: 3px;
+`;
+
+const HexField = styled.input`
+display: inline-block;
+width: 96px;
+font-size: 26px;
+border-color: #989898;
+border-style: solid solid solid none;
+background-color: white;
+border-width: 1px;
+border-top-right-radius: 3px;
+border-bottom-right-radius: 3px;
+`;
 
 class HexInput extends React.Component<HexInputProps> {
    
@@ -24,14 +55,15 @@ class HexInput extends React.Component<HexInputProps> {
     let newRGBValues: Color.RGBValues = Color.HexToRGB(newHexValue);
     this.props.handleColorChange(newRGBValues);
   }
-     
+  
   render() {
+
     let hexValue = Color.RGBToHex(this.props.rgbValues);
     return(
-      <div className="hexInput">
-        <div className="hexFieldPrefix">0x</div>
-        <input id="hexField" className="hexField" type="text" value={hexValue} onChange={this.handleChange}></input>      
-      </div>
+      <HexContainer>
+        <HexPrefix>0x</HexPrefix>
+        <HexField type="text" value={hexValue} onChange={this.handleChange}></HexField>  
+      </HexContainer>
     );
   }
 

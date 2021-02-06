@@ -1,6 +1,7 @@
 import React from "react";
 import * as Color from "./ColorModule";
-import InputLabelPair from "./InputLabelPair";
+import PlusMinusTextInput from "./PlusMinusTextInput";
+import { InputLabelPair, PlusMinusLabel } from "./styles/SharedCompStyles";
 
 type HSVProps = {
     handleColorChange: (hsvValues: Color.HSVValues) => void;
@@ -27,11 +28,20 @@ class HSVInput extends React.Component<HSVProps> {
   
   render() {
     return(
-      <div className="RGBInput">
-        <InputLabelPair value={this.props.hsvValues.h} id={Color.HSV.h} handleChange={this.handleChange}/>
-        <InputLabelPair value={this.props.hsvValues.s} id={Color.HSV.s} handleChange={this.handleChange}/>
-        <InputLabelPair value={this.props.hsvValues.v} id={Color.HSV.v} handleChange={this.handleChange}/>
-      </div>
+      <>
+        <InputLabelPair>
+          <PlusMinusLabel htmlFor={Color.HSV.h}> { Color.HSV.h.toUpperCase() }:</PlusMinusLabel>
+          <PlusMinusTextInput id={Color.HSV.h} value={this.props.hsvValues.h} handleChange={this.handleChange}/>     
+        </InputLabelPair>
+        <InputLabelPair>
+          <PlusMinusLabel htmlFor={Color.HSV.s}> { Color.HSV.s.toUpperCase() }:</PlusMinusLabel>
+          <PlusMinusTextInput id={Color.HSV.s} value={this.props.hsvValues.s} handleChange={this.handleChange}/>     
+        </InputLabelPair>
+        <InputLabelPair>
+          <PlusMinusLabel htmlFor={Color.HSV.v}> { Color.HSV.v.toUpperCase() }:</PlusMinusLabel>
+          <PlusMinusTextInput id={Color.HSV.v} value={this.props.hsvValues.v} handleChange={this.handleChange}/>     
+        </InputLabelPair>
+    </>
     );
   } 
 

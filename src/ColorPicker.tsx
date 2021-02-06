@@ -1,13 +1,11 @@
 import React from "react";
 import ColorDisplay from "./ColorDisplay";
-import ColorInput from "./ColorInput";
 import HueSlider from "./HueSlider";
 import * as Color from "./ColorModule";
-import ColorMatrix from "./ColorMatrix";
 import RGBInput from "./RGBInput";
 import HSVInput from "./HSVInput";
 import HexInput from "./HexInput";
-import "./styles/ColorPicker.css"
+import styled from "styled-components";
 
   
 type ColorPickerProps = {
@@ -18,6 +16,20 @@ type ColorPickerState = {
     hsvValues: Color.HSVValues;
     rgbValues: Color.RGBValues;
 }
+
+type WidthInlineDivProps = {
+  width: number;
+}
+
+const FixedWidthInlineBlock = styled.div<WidthInlineDivProps>`
+  width: ${props => props.width}px;
+  display: inline-block;
+`;
+
+const PctWidthInlineBlock = styled.div<WidthInlineDivProps>`
+  width: ${props => props.width}%;
+  display: inline-block;
+`;
 
 class ColorPicker extends React.Component<ColorPickerProps, ColorPickerState> {
   
@@ -47,27 +59,21 @@ class ColorPicker extends React.Component<ColorPickerProps, ColorPickerState> {
     
   render() {
     return (
-      <div className="colorPicker">
-        <div className="leftPaneControls" >
-          <div className="colorInput">
+      <>
+        <FixedWidthInlineBlock width={270}>
             <RGBInput rgbValues={this.state.rgbValues} handleColorChange={this.handleColorChange}/>
             <HSVInput hsvValues={this.state.hsvValues} handleColorChange={this.handleColorChange}/>
             <HueSlider hsvValues={this.state.hsvValues} handleColorChange={this.handleColorChange} />
-          </div>
-          <div className="colPickHexDispContainer">
-            <div className="colorDispContainer">
+          <div>
+            <PctWidthInlineBlock width={40}>
               <ColorDisplay rgbValues={this.state.rgbValues}/>
-            </div>
-            <div className="hexInputContainer">
+            </PctWidthInlineBlock>
+            <PctWidthInlineBlock width={60}>
               <HexInput rgbValues={this.state.rgbValues} handleColorChange={this.handleColorChange}/>
-            </div>
+            </PctWidthInlineBlock>
           </div>
-        </div>
-        <div className="rightPaneControls">
-          
-        </div>
-        
-      </div> 
+        </FixedWidthInlineBlock>
+      </> 
     );
   }
 
