@@ -6,6 +6,7 @@ import RGBInput from "./RGBInput";
 import HSVInput from "./HSVInput";
 import HexInput from "./HexInput";
 import styled from "styled-components";
+import SavedColor from "./SavedColor";
 
   
 type ColorPickerProps = {
@@ -72,6 +73,7 @@ class ColorPicker extends React.Component<ColorPickerProps, ColorPickerState> {
               <HexInput rgbValues={this.state.rgbValues} handleColorChange={this.handleColorChange}/>
             </PctWidthInlineBlock>
           </div>
+          <SavedColor rgbValues={this.state.rgbValues}/>
         </FixedWidthInlineBlock>
       </> 
     );

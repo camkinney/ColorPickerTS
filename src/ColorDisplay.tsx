@@ -15,13 +15,13 @@ const ColorDiv = styled.div<ColorDivProps>`
     height: 50px;
     display: block;
     margin: 12px 22px 12px 12px;
-    background-color: ${props => props.backgroundColor};
+    background-color: #${props => props.backgroundColor};
     float: right;
   `;
 
 function ColorDisplay(props: ColorDislayProps): ReactElement {
 
-  const backgroundColor =  "rgb("+props.rgbValues.r+", "+props.rgbValues.g+", "+props.rgbValues.b+")";
+  const backgroundColor =  Color.RGBToHex(props.rgbValues);
 
   
 
