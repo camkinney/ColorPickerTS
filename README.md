@@ -16,3 +16,5 @@ Supports saving and redisplaying colors via the small boxes on the right:
 ## Build/Run Details
 
 This app was created with Create React App: [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+I will follow up with more specifics on how to build and run.
