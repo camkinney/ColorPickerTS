@@ -1,35 +1,5 @@
 import * as CM from "../../ColorModule";
 
-test("getUpdatedHex converts a R value > f correctly", () => {
-    let updatedHex = CM.getUpdatedHex("202", CM.RGB.r, "656565");
-    expect(updatedHex).toBe("ca6565");
-});
-
-test("getUpdatedHex converts a G value > f correctly", () => {
-    let updatedHex = CM.getUpdatedHex("202", CM.RGB.g, "656565");
-    expect(updatedHex).toBe("65ca65");
-});
-
-test("getUpdatedHex converts a B value > f correctly", () => {
-    let updatedHex = CM.getUpdatedHex("202", CM.RGB.b, "656565");
-    expect(updatedHex).toBe("6565ca");
-});
-
-test("getUpdatedHex converts a R value < f correctly", () => {
-    let updatedHex = CM.getUpdatedHex("9", CM.RGB.r, "656565");
-    expect(updatedHex).toBe("096565");
-});
-
-test("getUpdatedHex converts a G value < f correctly", () => {
-    let updatedHex = CM.getUpdatedHex("9", CM.RGB.g, "656565");
-    expect(updatedHex).toBe("650965");
-});
-
-test("getUpdatedHex converts a B value < f correctly", () => {
-    let updatedHex = CM.getUpdatedHex("9", CM.RGB.b, "656565");
-    expect(updatedHex).toBe("656509");
-});
-
 test("formatNumString returns '0' for an empty string", () => {
     let numStr = "";
     let formattedNumStr = CM.formatNumString(numStr, 255);

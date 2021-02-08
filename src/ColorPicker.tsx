@@ -1,6 +1,7 @@
 import React from "react";
 import ColorDisplay from "./ColorDisplay";
 import HueSlider from "./HueSlider";
+import ColorMatrix from "./ColorMatrix";
 import * as Color from "./ColorModule";
 import RGBInput from "./RGBInput";
 import HSVInput from "./HSVInput";
@@ -48,6 +49,7 @@ class ColorPicker extends React.Component<ColorPickerProps, ColorPickerState> {
    * @param changedValue changed hexadecimal color value
    */
   handleColorChange(newValues: Color.HSVValues | Color.RGBValues): void {  
+    debugger;
     if (newValues instanceof Color.RGBValues) {
       let newHSVValues = Color.RGBToHSV(newValues);
       this.setState({rgbValues: newValues, hsvValues: newHSVValues});
@@ -73,7 +75,14 @@ class ColorPicker extends React.Component<ColorPickerProps, ColorPickerState> {
               <HexInput rgbValues={this.state.rgbValues} handleColorChange={this.handleColorChange}/>
             </PctWidthInlineBlock>
           </div>
-          <SavedColor rgbValues={this.state.rgbValues}/>
+        </FixedWidthInlineBlock>
+        <FixedWidthInlineBlock width={225}>
+          <ColorMatrix hsvValues={this.state.hsvValues} handleColorChange={this.handleColorChange}/>
+          <SavedColor rgbValues={this.state.rgbValues} handleColorChange={this.handleColorChange}/>
+          <SavedColor rgbValues={this.state.rgbValues} handleColorChange={this.handleColorChange}/>
+          <SavedColor rgbValues={this.state.rgbValues} handleColorChange={this.handleColorChange}/>
+          <SavedColor rgbValues={this.state.rgbValues} handleColorChange={this.handleColorChange}/>
+          <SavedColor rgbValues={this.state.rgbValues} handleColorChange={this.handleColorChange}/>
         </FixedWidthInlineBlock>
       </> 
     );

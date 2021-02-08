@@ -16,7 +16,7 @@ class HSVInput extends React.Component<HSVProps> {
   }
 
   /**
-   * Handler for when field's value is changed
+   * Handler for when a field's value is changed
    * @param event Change event
    */
   private handleChange(changedValue: string, id: string): void {

@@ -23,8 +23,6 @@ function ColorDisplay(props: ColorDislayProps): ReactElement {
 
   const backgroundColor =  Color.RGBToHex(props.rgbValues);
 
-  
-
   return(
     <ColorDiv backgroundColor={backgroundColor}/>
   );

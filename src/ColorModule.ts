@@ -168,32 +168,6 @@ export function formatNumString(numStr: string, high: number): number {
 }
 
 /**
-* Generate a new six digit hex string given the RGB value that changed and whether it was R,G, or B
-* @param changedValue string containing a number between 0-255
-* @param inputId Id of InputLabelPair
-* @param oldHexValue hex value string to be updated
-*/
-export function getUpdatedHex(changedValue: string, inputId: RGB, oldHexValue: string): string {
-    let hexTranslation: string = numTo2DigitHex(parseInt(changedValue));
-    let updatedHex: string;
-    if (inputId === RGB.r) {
-      updatedHex = hexTranslation + oldHexValue.substring(2);
-      return updatedHex;
-    }
-    else if (inputId === RGB.g) {
-      updatedHex = oldHexValue.substring(0,2) + hexTranslation + oldHexValue.substring(4,6);
-      return updatedHex;
-    }
-    else if (inputId === RGB.b) {
-      updatedHex = oldHexValue.substring(0,4) + hexTranslation;
-      return updatedHex;
-    }
-    else {
-      return "";
-    }
-}
-
-/**
  * Given HSV values, convert to hexadecimal string
  * @param hsvValues 
  */
@@ -322,7 +296,7 @@ export function HSVToRGB(hsvValues: HSVValues): RGBValues {
             g = p;
             b = v;
             break;
-        default: // case 5:
+        default:
             r = v;
             g = p;
             b = q;
