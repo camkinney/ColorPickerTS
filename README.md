@@ -4,11 +4,11 @@ This is a color selector control made with React and Typescript.
 
 ![Color Picker Image](./resources/ControlImage.png)
 
-Supports selecting a color via one of the following methods:
-- R, G and B values
-- H, S, and V values
-- Hexadecimal value
-- Hue adjustment slider
+Supports color selection via one of the following methods:
+- Enter R, G and B values
+- Enter H, S, and V values
+- Enter a hexadecimal value
+- Click and drag the hue adjustment slider
 - Click anywhere on the gradient square
 
 Supports saving and redisplaying colors via the small boxes on the right:
