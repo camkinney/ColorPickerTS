@@ -49,7 +49,6 @@ class ColorPicker extends React.Component<ColorPickerProps, ColorPickerState> {
    * @param changedValue changed hexadecimal color value
    */
   handleColorChange(newValues: Color.HSVValues | Color.RGBValues): void {  
-    debugger;
     if (newValues instanceof Color.RGBValues) {
       let newHSVValues = Color.RGBToHSV(newValues);
       this.setState({rgbValues: newValues, hsvValues: newHSVValues});
@@ -59,6 +58,7 @@ class ColorPicker extends React.Component<ColorPickerProps, ColorPickerState> {
       this.setState({rgbValues: newRGBValues, hsvValues: newValues});
     }
   }
+
     
   render() {
     return (
