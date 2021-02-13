@@ -1,46 +1,28 @@
-# Getting Started with Create React App
+# Color Picker TS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a color selector control made with React and Typescript. 
 
-## Available Scripts
+You can try it out here: [https://camkinney.github.io/ColorPickerTS/](https://camkinney.github.io/ColorPickerTS/)
 
-In the project directory, you can run:
+It looks like this:
 
-### `npm start`
+![Color Picker Image](./resources/ControlImage.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Supports color selection via one of the following methods:
+- Enter R, G and B values
+- Enter H, S, and V values
+- Enter a hexadecimal value
+- Click and drag the hue adjustment slider
+- Click anywhere on the gradient square
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Supports saving and redisplaying colors via the small boxes on the right:
+- To save the current color to a box, right click the box
+- To set the current color to the color in one of the boxes, left click the box
 
-### `npm test`
+## Details
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This app was created with Create React App: [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-### `npm run build`
+[https://camkinney.github.io/ColorPickerTS/](https://camkinney.github.io/ColorPickerTS/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+The control is only actively supported in Google Chrome.
