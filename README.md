@@ -14,10 +14,11 @@ Supports color selection via one of the following methods:
 Supports saving and redisplaying colors via the small boxes on the right:
 - To save the current color to a box, right click the box
 - To set the current color to the color in one of the boxes, left click the box
+
 ## Build/Run Details
 
 This app was created with Create React App: [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-I will follow up with more specifics on how to build and run. I am also intending to publish somwhere. In the meantime, there are gifs [here](./resources), although they are choppy (low FPS).
+You can try the control here: [https://camkinney.github.io/ColorPickerTS/](https://camkinney.github.io/ColorPickerTS/)
 
 The control is only actively supported in Google Chrome.
